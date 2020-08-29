@@ -1,0 +1,258 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    //background-image: url("/src/client/image/skies.jpg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.app {
+    width: 100%;
+    padding: 2px 2px 2px 2px;
+}
+
+#app {
+    display: grid;
+    /*grid-auto-rows: minmax(150px, auto);*/
+    grid-template-rows: 15% 20% 25% 30% 10%;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    grid-template-areas: "head head head head" "zip zip zip zip" "fl fl fl fl" "en en en en" "lh lh lh lh";
+    overflow-y: auto;
+}
+
+.holder {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.headline {
+    grid-area: head;
+    -ms-grid-row-span: 100%;
+    padding-top: 1vh;
+    font-size: 4.5vh;
+    color: rgb(3, 3, 71);
+    text-align: center;
+    font-weight: bold;
+    justify-content: space-around;
+    /*background-color: rgb(253, 253, 115);*/
+}
+
+.zip {
+    grid-area: zip;
+    margin-top: 1em;
+    padding-left: 1em;
+    font-size: 3vh;
+    text-align: left;
+    font-weight: bold;
+    color: honeydew;
+    background-color: lightskyblue;
+}
+
+#zip {
+    margin-top: 1em;
+    width: 80%;
+    height: 5vh;
+    line-height: 1vh;
+    text-align: left;
+    font-size: 2vh;
+    border-radius: 7px;
+    padding-left: 1em;
+}
+
+.feel {
+    grid-area: fl;
+    padding-left: 1em;
+    font-size: 3vh;
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    color: honeydew;
+    background-color: lightskyblue;
+}
+
+#feelings {
+    padding-top: 1em;
+    margin-top: 1em;
+    width: 80%;
+    height: 7vh;
+    line-height: 1vh;
+    text-align: left;
+    font-size: 2vh;
+    border-radius: 7px;
+    padding-left: 1em;
+}
+
+#generate {
+    height: 4vh;
+    width: 35%;
+    font-weight: bold;
+    color: white;
+    background-color: midnightblue;
+    font-size: 2.5vmin;
+    margin-top: 1em;
+    border-radius: 5px;
+}
+
+.title {
+    grid-area: title;
+    font-weight: bold;
+    font-size: 3vh;
+    color: rgb(6, 9, 49);
+    text-align: center;
+    background-color: rgb(238, 185, 51);
+}
+
+.entry .title {
+    padding-top: 5px;
+}
+
+.entry {
+    grid-area: en;
+    margin-top: 1em;
+    display: grid;
+    grid-template-rows: 20% 65%;
+    grid-template-areas: "title title" "eh eh";
+}
+.hidden {
+    display: none;
+}
+
+#entryHolder {
+    grid-area: eh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: lightskyblue;
+    flex-wrap: wrap;
+    color: black;
+    overflow: auto;
+}
+
+.content {
+    font-weight: bold;
+}
+
+.history {
+    grid-area: lh;
+    display: grid;
+    grid-template-rows: 30% 70%;
+    grid-template-areas: "title title" "hh hh";
+}
+
+#historyHolder {
+    grid-area: hh;
+    display: flex;
+    flex-direction: row;
+    background-color: lightskyblue;
+    flex-wrap: wrap;
+    color: black;
+    overflow-y: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.history .title {
+    font-size: 2vh;
+}
+
+#temp {
+    font-size: 6vh;
+}
+
+@media (max-width: 600px) {
+    .app {
+        width: 100%;
+        padding: 5px 5px;
+    }
+    .zip {
+        padding-top: 1em;
+        padding-right: 5px;
+    }
+    #entryHolder {
+        font-size: 3.5vh;
+        font-style: italic;
+    }
+    #date {
+        font-size: 3vh;
+    }
+    #feeling {
+        font-size: 3.5vh;
+    }
+    #content {
+        font-size: 4vh;
+        font-weight: bold;
+    }
+    #temp {
+        padding-top: 1vh;
+        font-size: 5vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    .app {
+        max-width: 95%;
+    }
+    #entryHolder {
+        justify-content: space-around;
+        align-content: left;
+        font-size: 3.5vh;
+        font-style: italic;
+    }
+    #historyHolder {
+        font-size: 2.5vh;
+    }
+    #temp {
+        font-size: 3vh;
+        font-weight: bold;
+    }
+    #content {
+        font-size: 3vh;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 768px) {
+    #entryHolder {
+        justify-content: space-around;
+        align-content: left;
+        font-size: 3.5vh;
+        font-style: italic;
+    }
+    #historyHolder {
+        font-size: 2.5vh;
+        font-style: italic;
+    }
+    #temp {
+        font-size: 3vh;
+    }
+    #content {
+        font-size: 3vh;
+        font-weight: bold;
+    }
+}
+
+/* Style for Placeholder Text*/
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: #f0d43a;
+    font-family: 'Oswald', sans-serif;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #f0d43a;
+    font-family: 'Oswald', sans-serif;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #f0d43a;
+    font-family: 'Oswald', sans-serif;
+}
