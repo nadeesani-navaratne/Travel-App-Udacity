@@ -1,3 +1,4 @@
+const { getWeatherForcast } = require("./weatherForecast");
 
 /* Global Variables */
 const baseURL = 'http://api.geonames.org/searchJSON?q=';
@@ -15,19 +16,16 @@ Once generate button clicked will send an api call to fetch data from the  geona
 
 const generateButton = document.getElementById('generate');
 const city = document.getElementById('city')
-const startDate = document.getElementById('start-date')
 
 generateButton.addEventListener('click', performAction);
 function performAction() {
     const newDestination = city.value;
-    const startDay = startDate.value;
-
-
     getWeatherRequest(baseURL, newDestination, username)
         .then(function (data) {
             const cityLatitute = data.geonames[0].lat;
             const cityLongitute = data.geonames[0].lng;
             const country = data.geonames[0].countryName;
+            getWeatherForcast(cityLatitute,cityLongitute)
         })
 };
 

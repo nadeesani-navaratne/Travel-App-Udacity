@@ -14,26 +14,29 @@ body {
 #app {
     display: grid;
     /*grid-auto-rows: minmax(150px, auto);*/
-    grid-template-rows: 15% 20% 25% 30% 10%;
+    grid-template-rows: 20% 20% 35% 10% 10%;
     width: 100vw;
     height: 100vh;
     justify-content: center;
-    font-family: 'Oswald', sans-serif;
-    grid-template-areas: "head head head head" "zip zip zip zip" "fl fl fl fl" "en en en en" "lh lh lh lh";
+    font-family: "Oswald", sans-serif;
+    grid-template-areas: "head head head head" "city city city city" "fl fl fl fl" "en en en en" "lh lh lh lh";
     overflow-y: auto;
 }
 
 .holder {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
 }
 
 .headline {
     grid-area: head;
     -ms-grid-row-span: 100%;
+    display: flex;
+    flex-direction: column;
     padding-top: 1vh;
-    font-size: 4.5vh;
+    margin-top: 2vh;
+    font-size: 4vh;
     color: rgb(3, 3, 71);
     text-align: center;
     font-weight: bold;
@@ -41,18 +44,31 @@ body {
     /*background-color: rgb(253, 253, 115);*/
 }
 
-.zip {
-    grid-area: zip;
+#icon {
+    grid-area: pic;
+    width: 100%;
+    height: 100%;
+}
+
+#weather__icon {
+    width: 100%;
+    height: 150px;
+}
+
+.city {
+    grid-area: city;
     margin-top: 1em;
     padding-left: 1em;
+    padding-top: 1em;
     font-size: 3vh;
     text-align: left;
     font-weight: bold;
-    color: honeydew;
+    color: rgb(3, 3, 71);
     background-color: lightskyblue;
+
 }
 
-#zip {
+#city {
     margin-top: 1em;
     width: 80%;
     height: 5vh;
@@ -63,19 +79,22 @@ body {
     padding-left: 1em;
 }
 
-.feel {
+.duration {
     grid-area: fl;
     padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     font-size: 3vh;
     text-align: left;
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    color: honeydew;
+    //color: honeydew;
+    color: rgb(3, 3, 71);
     background-color: lightskyblue;
 }
 
-#feelings {
+#duration {
     padding-top: 1em;
     margin-top: 1em;
     width: 80%;
@@ -85,6 +104,21 @@ body {
     font-size: 2vh;
     border-radius: 7px;
     padding-left: 1em;
+    background-color: purple;
+}
+
+#start-date {
+    background-color: green;
+    width: 60%;
+    margin-top: 0.5em;
+    vertical-align: middle;
+}
+
+#end-date {
+    background-color: green;
+    width: 60%;
+    margin-top: 0.5em;
+    vertical-align: middle;
 }
 
 #generate {
@@ -98,45 +132,103 @@ body {
     border-radius: 5px;
 }
 
-.title {
-    grid-area: title;
-    font-weight: bold;
-    font-size: 3vh;
-    color: rgb(6, 9, 49);
-    text-align: center;
-    background-color: rgb(238, 185, 51);
-}
-
-.entry .title {
-    padding-top: 5px;
-}
-
 .entry {
     grid-area: en;
     margin-top: 1em;
+    padding-top: 1em;
     display: grid;
-    grid-template-rows: 20% 65%;
+    grid-template-rows: 25% 60%;
     grid-template-areas: "title title" "eh eh";
+    background-color: rgb(247, 232, 96);
+    height:3em;
 }
 .hidden {
     display: none;
 }
 
-#entryHolder {
+#trip-tittle {
+    grid-area: title;
+    margin-top: 2vh;
+    background-color: green;
+    font-weight: bold;
+    font-size: 3.75vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+}
+
+#result {
+    background-color: goldenrod;
+}
+
+/* #entryHolder {
     grid-area: eh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     background-color: lightskyblue;
-    flex-wrap: wrap;
-    color: black;
-    overflow: auto;
-}
+  /*   flex-wrap: wrap;
+   color: black;
+    overflow: auto;  
+}   */
 
-.content {
+#remaining-days {
+  margin-top: 4vh;
+    margin-bottom: 2.5vh;
+    padding-top: 2vh;
+    //padding-bottom: 5vh; 
+    background-color: red;
+    /* padding-top:2vh;
+    padding-bottom: 2vh;
+    margin-top:1vh; */
+    text-align: left;
+    font-size: 3vh;
     font-weight: bold;
 }
 
+#temperature {
+    /* margin-top: 4vh;
+    //margin-bottom: 2.5vh;
+    padding-top: 2vh;
+    padding-bottom: 10vh;
+    background-color: rgb(216, 238, 245); */
+    /* padding-top:2vh;
+    padding-bottom: 2vh;
+    margin-top:1vh; */
+    padding-top: 2vh;
+    text-align: left;
+    font-size: 3vh;
+    font-weight: bold;
+    background-color: violet;
+}
+
+#description {
+    margin-top: 4vh;
+    margin-bottom: 2.5vh;
+    padding-top: 2vh;
+    background-color: rgb(216, 238, 245);
+    /* padding-top:2vh;
+    padding-bottom: 2vh;
+    margin-top:1vh; */
+    text-align: left;
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+#sunrise {
+    margin-top: 4vh;
+    margin-bottom: 2.5vh;
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+    background-color: rgb(216, 238, 245);
+    /* padding-top:2vh;
+    padding-bottom: 2vh;
+    margin-top:1vh; */
+    text-align: left;
+    font-size: 3vh;
+    font-weight: bold;
+}
 .history {
     grid-area: lh;
     display: grid;
@@ -144,7 +236,7 @@ body {
     grid-template-areas: "title title" "hh hh";
 }
 
-#historyHolder {
+/* #historyHolder {
     grid-area: hh;
     display: flex;
     flex-direction: row;
@@ -165,13 +257,13 @@ body {
 #temp {
     font-size: 6vh;
 }
-
+ */
 @media (max-width: 600px) {
     .app {
         width: 100%;
         padding: 5px 5px;
     }
-    .zip {
+    .city {
         padding-top: 1em;
         padding-right: 5px;
     }
@@ -179,17 +271,29 @@ body {
         font-size: 3.5vh;
         font-style: italic;
     }
-    #date {
-        font-size: 3vh;
-    }
-    #feeling {
+    #duration {
         font-size: 3.5vh;
+        font-style: italic;
     }
-    #content {
+    #start-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
+    #end-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
+    #description {
         font-size: 4vh;
         font-weight: bold;
     }
-    #temp {
+    #temperature {
         padding-top: 1vh;
         font-size: 5vh;
     }
@@ -205,14 +309,14 @@ body {
         font-size: 3.5vh;
         font-style: italic;
     }
-    #historyHolder {
+    /*     #historyHolder {
         font-size: 2.5vh;
-    }
-    #temp {
+    } */
+    #temperature {
         font-size: 3vh;
         font-weight: bold;
     }
-    #content {
+    #description {
         font-size: 3vh;
         font-weight: bold;
     }
@@ -229,10 +333,10 @@ body {
         font-size: 2.5vh;
         font-style: italic;
     }
-    #temp {
+    #temperature {
         font-size: 3vh;
     }
-    #content {
+    #description {
         font-size: 3vh;
         font-weight: bold;
     }
@@ -242,17 +346,17 @@ body {
 ::placeholder {
     /* Firefox, Chrome, Opera */
     color: #f0d43a;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     color: #f0d43a;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 ::-ms-input-placeholder {
     /* Microsoft Edge */
     color: #f0d43a;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Oswald", sans-serif;
 }
