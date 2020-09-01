@@ -1,6 +1,6 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    //background-image: url("/src/client/image/skies.jpg");
+    background-image: url("/src/client/media/background.jpg");
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
@@ -64,7 +64,16 @@ body {
     text-align: left;
     font-weight: bold;
     color: rgb(3, 3, 71);
-    background-color: lightskyblue;
+    background: linear-gradient(
+        to left,
+        lavender,
+        lightblue,
+        rgb(243, 199, 206),
+        rgb(221, 245, 221),
+        rgb(252, 252, 101),
+        rgb(245, 231, 233),
+        rgb(252, 113, 147)
+    );
 }
 
 #city {
@@ -90,7 +99,13 @@ body {
     flex-direction: column;
     //color: honeydew;
     color: rgb(3, 3, 71);
-    background-color: lightskyblue;
+    background: linear-gradient(
+        to left,
+        rgb(247, 193, 247),
+        rgb(215, 175, 243),
+        rgb(164, 164, 245),
+        rgb(221, 245, 221)
+    );
 }
 
 #duration {
@@ -225,6 +240,7 @@ body {
     padding-top: 2.5vh;
     padding-bottom: 2vh;
     background-color: rgb(220, 250, 240);
+
     text-align: center;
     font-size: 3vh;
     font-weight: bold;
@@ -238,28 +254,6 @@ body {
     grid-template-areas: "title title" "hh hh";
 }
 
-/* #historyHolder {
-    grid-area: hh;
-    display: flex;
-    flex-direction: row;
-    background-color: lightskyblue;
-    flex-wrap: wrap;
-    color: black;
-    overflow-y: auto;
-}
-
-.hidden {
-    display: none;
-}
-
-.history .title {
-    font-size: 2vh;
-}
-
-#temp {
-    font-size: 6vh;
-}
- */
 @media (max-width: 600px) {
     .app {
         width: 100%;
@@ -322,6 +316,20 @@ body {
         font-size: 3vh;
         font-weight: bold;
     }
+    #start-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
+    #end-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
 }
 
 @media (max-width: 768px) {
@@ -341,6 +349,20 @@ body {
     #description {
         font-size: 3vh;
         font-weight: bold;
+    }
+    #start-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
+    #end-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
     }
 }
 

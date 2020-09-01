@@ -1,7 +1,9 @@
 const { getWeatherForcast } = require("./weatherForecast");
 const { getPhoto } = require("./getPhoto");
-const { removeAction } = require("./removeTrip");
+const { clearTripDetails } = require("./removeTrip");
 const { duration } = require("./calculateDays");
+const { removeAction } = require("../js/removeTrip");
+const removeTrip = require('./removeTrip')
 
 
 /* Global Variables */
@@ -19,25 +21,15 @@ Once generate button clicked will send an api call to fetch data from the  geona
 */
 
 const generateButton = document.getElementById('generate');
-const city = document.getElementById('city')
-
-
-//Event listner to the generate button and DOM loader function
-/* const domLoader = async () => {
-     document.addEventListener('DOMContentLoaded', () => {
-generateButton.addEventListener("click", performAction);
-    })
-}; */
-
-/* document.addEventListener('DOMContentLoaded', (event) => {
-    generateButton.addEventListener("click", performAction);
-}); */
+const city = document.getElementById('city');
 
 window.onload = function () {
-    generateButton.addEventListener("click", performAction);
+    if (generateButton != null) {
+        generateButton.addEventListener("click", performAction);
+    }
 }
 
-const performAction = () => {
+function performAction() {
     const newDestination = city.value;
     getWeatherRequest(baseURL, newDestination, username)
         .then(function (data) {
@@ -48,10 +40,7 @@ const performAction = () => {
             getPhoto(newDestination, country);
             duration()
         })
-};
-
-removeAction();
-
+}
 
 //Fetch data from geonames api
 const getWeatherRequest = async (baseURL, newDestination, username) => {
@@ -68,4 +57,4 @@ const getWeatherRequest = async (baseURL, newDestination, username) => {
     }
 }
 
-module.exports = { performAction, getWeatherRequest, getWeatherForcast, getPhoto }
+module.exports = { performAction, getWeatherRequest, getWeatherForcast, getPhoto, clearTripDetails }

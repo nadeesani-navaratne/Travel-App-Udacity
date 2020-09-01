@@ -1,6 +1,7 @@
 const startDate = document.getElementById('start-date')
 const endDate = document.getElementById('end-date')
 
+//Calculating remaing days for the trip
 const getRemainingDaysForTrip = () => {
     const startDay = new Date(startDate.value);
     const today = new Date();
@@ -11,6 +12,7 @@ const getRemainingDaysForTrip = () => {
     return remainingDays;
 }
 
+//Calculating duration of the trip
 const duration = () => {
     const startDay = new Date(startDate.value);
     const endDay = new Date(endDate.value);

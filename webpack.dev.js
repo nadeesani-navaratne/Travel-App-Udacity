@@ -2,6 +2,8 @@ const path = require("path")
 const webpack = require("webpack")
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+
 module.exports = {
     mode: 'development',
     devtool: 'source-map',
@@ -16,7 +18,16 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-           }
+           },
+           {
+            test: /\.(jpg|png|svg)$/,
+            use: {
+                loader: 'url-loader',
+                options: {
+                    limit: 25000
+                }
+            }
+        }
         ]
     },
     plugins: [
