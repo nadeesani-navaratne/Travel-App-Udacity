@@ -1,6 +1,6 @@
 const pixabayURL = 'https://pixabay.com/api/?'
 const pixabayAPIKey = '18023770-1686678485031f56a56844441'
-//const images = require('./../media/skies.jpg')
+
 
 //Fetching a photo of the city using pixabay api
 const getPhoto = async (newDestination, country) => {
