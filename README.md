@@ -9,6 +9,7 @@
 * [Project Goals](#project_goals)
 * [Instructions](#instructions)
 * [Technologies](#technologies)
+* [Extend Options](#extend_Options)
 
 ## About
 
@@ -113,3 +114,7 @@ Project has  deployed on  [Heroku](https://www.heroku.com/)
 * Body -parser
 * Webpack
 * Jest 
+
+## Extend Options
+* Add end date and display length of trip
+  This feature is to take user input from the UI and to calculate and then will display the length of users trip.
