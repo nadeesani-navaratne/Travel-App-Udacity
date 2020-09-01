@@ -1,0 +1,390 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-image: url("/src/client/media/background.jpg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.app {
+    width: 100%;
+    padding: 2px 2px 2px 2px;
+}
+
+#app {
+    display: grid;
+    /*grid-auto-rows: minmax(150px, auto);*/
+    grid-template-rows: 20% 20% 35% 10% 10%;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    font-family: "Oswald", sans-serif;
+    grid-template-areas: "head head head head" "city city city city" "fl fl fl fl" "en en en en" "lh lh lh lh";
+    overflow-y: auto;
+}
+
+.holder {
+    display: flex;
+    flex-direction: column;
+    //flex-wrap: wrap;
+}
+
+.headline {
+    grid-area: head;
+    -ms-grid-row-span: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vh;
+    margin-top: 2vh;
+    font-size: 4vh;
+    color: rgb(3, 3, 71);
+    text-align: center;
+    font-weight: bold;
+    justify-content: space-around;
+    /*background-color: rgb(253, 253, 115);*/
+}
+
+#icon {
+    grid-area: pic;
+    width: 100%;
+    height: 100%;
+}
+
+#weather__icon {
+    width: 100%;
+    height: 150px;
+}
+
+.city {
+    grid-area: city;
+    margin-top: 1em;
+    padding-left: 1em;
+    padding-top: 1em;
+    font-size: 3vh;
+    text-align: left;
+    font-weight: bold;
+    color: rgb(3, 3, 71);
+    background: linear-gradient(
+        to left,
+        lavender,
+        lightblue,
+        rgb(243, 199, 206),
+        rgb(221, 245, 221),
+        rgb(252, 252, 101),
+        rgb(245, 231, 233),
+        rgb(252, 113, 147)
+    );
+}
+
+#city {
+    margin-top: 1em;
+    width: 80%;
+    height: 5vh;
+    line-height: 1vh;
+    text-align: left;
+    font-size: 2vh;
+    border-radius: 7px;
+    padding-left: 1em;
+}
+
+.duration {
+    grid-area: fl;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 3vh;
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    //color: honeydew;
+    color: rgb(3, 3, 71);
+    background: linear-gradient(
+        to left,
+        rgb(247, 193, 247),
+        rgb(215, 175, 243),
+        rgb(164, 164, 245),
+        rgb(221, 245, 221)
+    );
+}
+
+#duration {
+    padding-top: 1em;
+    margin-top: 1em;
+    width: 80%;
+    height: 7vh;
+    line-height: 1vh;
+    border-radius: 7px;
+    padding-left: 1em;
+    margin-bottom: 2vh;
+    padding-bottom: 3vh;
+    background-color: rgb(220, 250, 240);
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#start-date {
+    background-color: lavender;
+    width: 60%;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    vertical-align: middle;
+    color: gray;
+    padding-bottom: 0.5em;
+}
+
+#end-date {
+    background-color: lavender;
+    width: 60%;
+    margin-top: 0.5em;
+    vertical-align: middle;
+    color: grey;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#generate {
+    height: 4vh;
+    width: 35%;
+    font-weight: bold;
+    color: white;
+    background-color: midnightblue;
+    font-size: 2.5vmin;
+    margin-top: 0.5em;
+    border-radius: 5px;
+}
+
+#remove {
+    height: 4vh;
+    width: 35%;
+    font-weight: bold;
+    color: white;
+    background-color: midnightblue;
+    font-size: 2.5vmin;
+    margin-top: 0.5em;
+    border-radius: 5px;
+    align-self: flex-start;
+}
+
+.entry {
+    grid-area: en;
+    margin-top: 1em;
+    padding-top: 1em;
+}
+.hidden {
+    display: none;
+}
+
+#trip-tittle {
+    grid-area: title;
+    margin-top: 2vh;
+    font-weight: bold;
+    font-size: 3.75vh;
+    text-align: center;
+    background-color: darkorange;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+#entryHolder {
+    background-color: rgb(220, 250, 240);
+}
+
+#result {
+    background-color: goldenrod;
+}
+
+#remaining-days {
+    margin-top: 3vh;
+    margin-bottom: 2.5vh;
+    padding-top: 2.5vh;
+    padding-bottom: 2vh;
+    background-color: rgb(220, 250, 240);
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    vertical-align: middle;
+    width: 100%;
+    color: maroon;
+}
+
+#temperature {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    background-color: rgb(220, 250, 240);
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#description {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    background-color: rgb(220, 250, 240);
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#sunrise {
+    margin-top: 2.5vh;
+    margin-bottom: 3vh;
+    padding-top: 2.5vh;
+    padding-bottom: 2vh;
+    background-color: rgb(220, 250, 240);
+
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    vertical-align: middle;
+    width: 100%;
+}
+.history {
+    grid-area: lh;
+    display: grid;
+    grid-template-rows: 30% 70%;
+    grid-template-areas: "title title" "hh hh";
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(1, 1, 32);
+}
+
+@media (max-width: 600px) {
+    .app {
+        width: 100%;
+        padding: 5px 5px;
+    }
+    .city {
+        padding-top: 1em;
+        padding-right: 5px;
+    }
+    #entryHolder {
+        font-size: 3.5vh;
+        font-style: italic;
+    }
+    #duration {
+        font-size: 3.5vh;
+        font-style: italic;
+    }
+    #start-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
+    #end-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
+    #description {
+        font-size: 4vh;
+        font-weight: bold;
+    }
+    #temperature {
+        padding-top: 1vh;
+        font-size: 5vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    .app {
+        max-width: 95%;
+    }
+    #entryHolder {
+        justify-content: space-around;
+        align-content: left;
+        font-size: 3.5vh;
+        font-style: italic;
+    }
+    /*     #historyHolder {
+        font-size: 2.5vh;
+    } */
+    #temperature {
+        font-size: 3vh;
+        font-weight: bold;
+    }
+    #description {
+        font-size: 3vh;
+        font-weight: bold;
+    }
+    #start-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
+    #end-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
+}
+
+@media (max-width: 768px) {
+    #entryHolder {
+        justify-content: space-around;
+        align-content: left;
+        font-size: 3.5vh;
+        font-style: italic;
+    }
+    #historyHolder {
+        font-size: 2.5vh;
+        font-style: italic;
+    }
+    #temperature {
+        font-size: 3vh;
+    }
+    #description {
+        font-size: 3vh;
+        font-weight: bold;
+    }
+    #start-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
+    #end-date {
+        font-size: 2vh;
+        width: 60%;
+        height: 5em;
+        margin-top: 0.5em;
+        vertical-align: middle;
+    }
+}
+
+/* Style for Placeholder Text*/
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: #f0d43a;
+    font-family: "Oswald", sans-serif;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #f0d43a;
+    font-family: "Oswald", sans-serif;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #f0d43a;
+    font-family: "Oswald", sans-serif;
+}

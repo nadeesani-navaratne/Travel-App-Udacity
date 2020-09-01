@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Travel App</title>
+</head>
+
+<body>
+  <div class="app">
+    <div id="app">
+      <div class="holder headline">
+        <div id="topic">Travel Planner - Plan your trip</div>
+        <div id="icon">
+          <img id="weather__icon" src="" alt="">
+        </div>
+      </div>
+      <div class="holder city">
+        <label for="city">Where do you want to travel</label>
+        <input type="text" id="city" placeholder="Enter your destination city ">
+      </div>
+      <div class="holder duration">
+        <label for="duration">When do you travel </label>
+        <strong>Start Date:</strong>
+        <input id="start-date" type="date" name="start-date" />
+        <br />
+        <strong>End Date:</strong>
+        <input id="end-date" type="date" name="end-date" />
+        <button id="generate" type="submit"> Save Trip </button>
+        <button id="remove" type="submit"> Remove Trip </button>
+      </div>
+      <div class="holder entry hidden" id="current-result">
+        <div class="title" id="trip-tittle">My recent trip </div>
+        <div id="entryHolder">
+          <div id="remaining-days"></div>
+          <div id="temperature"></div>
+          <div id="description"></div>
+          <div id="sunrise"></div>
+          <div id="duration"></div>
+        </div>
+      </div>
+    </div>
+    <div class="holder history hidden" id="history-result">
+      <div class="title">“Live your life by a compass, not a clock.”</div>
+    </div>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>
