@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = { postData: [] };
+//projectData = { postData: [] };
 
 //Require Path 
 const path = require('path')

@@ -1,11 +1,9 @@
-//import { performAction,getWeatherRequest} from './js/app'
-import { getRemainingDaysForTrip } from './js/calculateDays'
-import {getWeatherForcast} from './js/weatherForecast'
 
-
-import { performAction,getWeatherRequest} from './js/app'
+import { performAction } from './js/app'
+//import {removeAction} from './js/removeTrip'
 import './styles/style.scss'
+document.getElementById("generete").addEventListener('click', performAction);
+export { performAction }
 
-
-//export {performAction,updateHistoryUI,updateUI,getWeatherRequest,postData,resetValues} */
 alert('I exist')
+

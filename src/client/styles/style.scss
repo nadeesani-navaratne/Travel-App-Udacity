@@ -65,7 +65,6 @@ body {
     font-weight: bold;
     color: rgb(3, 3, 71);
     background-color: lightskyblue;
-
 }
 
 #city {
@@ -100,25 +99,35 @@ body {
     width: 80%;
     height: 7vh;
     line-height: 1vh;
-    text-align: left;
-    font-size: 2vh;
     border-radius: 7px;
     padding-left: 1em;
-    background-color: purple;
+    margin-bottom: 2vh;
+    padding-bottom: 3vh;
+    background-color: rgb(220, 250, 240);
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    vertical-align: middle;
 }
 
 #start-date {
-    background-color: green;
+    background-color: lavender;
     width: 60%;
     margin-top: 0.5em;
+    padding-top: 0.5em;
     vertical-align: middle;
+    color: gray;
+    padding-bottom: 0.5em;
 }
 
 #end-date {
-    background-color: green;
+    background-color: lavender;
     width: 60%;
     margin-top: 0.5em;
     vertical-align: middle;
+    color: grey;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 #generate {
@@ -128,19 +137,26 @@ body {
     color: white;
     background-color: midnightblue;
     font-size: 2.5vmin;
-    margin-top: 1em;
+    margin-top: 0.5em;
     border-radius: 5px;
+}
+
+#remove {
+    height: 4vh;
+    width: 35%;
+    font-weight: bold;
+    color: white;
+    background-color: midnightblue;
+    font-size: 2.5vmin;
+    margin-top: 0.5em;
+    border-radius: 5px;
+    align-self: flex-start;
 }
 
 .entry {
     grid-area: en;
     margin-top: 1em;
     padding-top: 1em;
-    display: grid;
-    grid-template-rows: 25% 60%;
-    grid-template-areas: "title title" "eh eh";
-    background-color: rgb(247, 232, 96);
-    height:3em;
 }
 .hidden {
     display: none;
@@ -149,85 +165,71 @@ body {
 #trip-tittle {
     grid-area: title;
     margin-top: 2vh;
-    background-color: green;
     font-weight: bold;
     font-size: 3.75vh;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around;
+    background-color: darkorange;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+#entryHolder {
+    background-color: rgb(220, 250, 240);
 }
 
 #result {
     background-color: goldenrod;
 }
 
-/* #entryHolder {
-    grid-area: eh;
-    display: flex;
-    flex-direction: column;
-    background-color: lightskyblue;
-  /*   flex-wrap: wrap;
-   color: black;
-    overflow: auto;  
-}   */
-
 #remaining-days {
-  margin-top: 4vh;
+    margin-top: 3vh;
     margin-bottom: 2.5vh;
-    padding-top: 2vh;
-    //padding-bottom: 5vh; 
-    background-color: red;
-    /* padding-top:2vh;
+    padding-top: 2.5vh;
     padding-bottom: 2vh;
-    margin-top:1vh; */
-    text-align: left;
+    background-color: rgb(220, 250, 240);
+    text-align: center;
     font-size: 3vh;
     font-weight: bold;
+    vertical-align: middle;
+    width: 100%;
+    color: maroon;
 }
 
 #temperature {
-    /* margin-top: 4vh;
-    //margin-bottom: 2.5vh;
-    padding-top: 2vh;
-    padding-bottom: 10vh;
-    background-color: rgb(216, 238, 245); */
-    /* padding-top:2vh;
-    padding-bottom: 2vh;
-    margin-top:1vh; */
-    padding-top: 2vh;
-    text-align: left;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    background-color: rgb(220, 250, 240);
+    text-align: center;
     font-size: 3vh;
     font-weight: bold;
-    background-color: violet;
+    vertical-align: middle;
 }
 
 #description {
-    margin-top: 4vh;
-    margin-bottom: 2.5vh;
-    padding-top: 2vh;
-    background-color: rgb(216, 238, 245);
-    /* padding-top:2vh;
-    padding-bottom: 2vh;
-    margin-top:1vh; */
-    text-align: left;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    background-color: rgb(220, 250, 240);
+    text-align: center;
     font-size: 3vh;
     font-weight: bold;
+    vertical-align: middle;
 }
 
 #sunrise {
-    margin-top: 4vh;
-    margin-bottom: 2.5vh;
-    padding-top: 2vh;
-    padding-bottom: 5vh;
-    background-color: rgb(216, 238, 245);
-    /* padding-top:2vh;
+    margin-top: 2.5vh;
+    margin-bottom: 3vh;
+    padding-top: 2.5vh;
     padding-bottom: 2vh;
-    margin-top:1vh; */
-    text-align: left;
+    background-color: rgb(220, 250, 240);
+    text-align: center;
     font-size: 3vh;
     font-weight: bold;
+    vertical-align: middle;
+    width: 100%;
 }
 .history {
     grid-area: lh;

@@ -12,6 +12,9 @@ const getWeatherForcast = async (cityLatitute,cityLongitute) => {
         const res = await fetch(`${currentWeatherURL}&lat=${cityLatitute}&lon=${cityLongitute}&key=${currentWeatherAPIKey}`)
         try {
             const weatherData = await res.json();
+            document.getElementById('temperature').innerHTML = `Temperature: ${weatherData.data[0].temp} °C`; 
+            document.getElementById('description').innerHTML = `Weather Forecast: ${weatherData.data[0].weather.description}`;
+            document.getElementById('sunrise').innerHTML = `Sunrise: ${weatherData.data[0].sunrise} A.M`;
             return weatherData.data[0].app_temp;
         } catch (error) {
             console.log("There was an error with retrieving data from the Weather, error");
@@ -22,6 +25,10 @@ const getWeatherForcast = async (cityLatitute,cityLongitute) => {
         try {
             const weatherData = await res.json();
             console.log(weatherData)
+            document.getElementById('temperature').innerHTML = `Temperature: ${weatherData.data[0].temp} °C`; 
+            document.getElementById('description').innerHTML = `Weather Forecast: ${weatherData.data[0].weather.description}`;
+            console.log(`${weatherData.data[0].max_temp}`);
+            document.getElementById('sunrise').innerHTML = `Max_temp: ${weatherData.data[0].max_temp} °C`;
             return weatherData.data[0].temp; 
         } catch (error) {
             console.log("There was an error with retrieving data from the Weather, error");
