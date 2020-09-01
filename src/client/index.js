@@ -1,7 +1,6 @@
 
 import { performAction } from './js/app'
 import { removeAction } from './js/removeTrip'
-
 import './styles/style.scss'
 
 if (document.getElementById("generete") != null) {
@@ -13,7 +12,6 @@ if (document.getElementById("remove") != null) {
 }
 
 export { performAction, removeAction }
-//module.exports = {performAction, removeAction}
 
-alert('I exist')
+alert('Launch Travel App')
 

@@ -252,6 +252,10 @@ body {
     display: grid;
     grid-template-rows: 30% 70%;
     grid-template-areas: "title title" "hh hh";
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(1, 1, 32);
 }
 
 @media (max-width: 600px) {

@@ -1,9 +1,7 @@
 const { getWeatherForcast } = require("./weatherForecast");
 const { getPhoto } = require("./getPhoto");
-const { clearTripDetails } = require("./removeTrip");
 const { duration } = require("./calculateDays");
-const { removeAction } = require("../js/removeTrip");
-const removeTrip = require('./removeTrip')
+const removeAction = require('./removeTrip')
 
 
 /* Global Variables */
@@ -19,7 +17,7 @@ console.log(newDate);
 Adding event listner for generate button.
 Once generate button clicked will send an api call to fetch data from the  geonames API.
 */
-
+const removeTripButton = document.getElementById('remove');
 const generateButton = document.getElementById('generate');
 const city = document.getElementById('city');
 
@@ -42,6 +40,16 @@ function performAction() {
         })
 }
 
+//Adding event litner to remove trip button
+window.addEventListener('DOMContentLoaded', () => {
+    if (removeTripButton != null) {
+        removeTripButton.addEventListener("click", removeAction);
+    }
+});
+
+removeAction.removeAction()
+
+
 //Fetch data from geonames api
 const getWeatherRequest = async (baseURL, newDestination, username) => {
     const urlToFetch = `${baseURL}${newDestination}&maxRows=10&username=${username}`;
@@ -57,4 +65,5 @@ const getWeatherRequest = async (baseURL, newDestination, username) => {
     }
 }
 
-module.exports = { performAction, getWeatherRequest, getWeatherForcast, getPhoto, clearTripDetails }
+//module.exports = { performAction, getWeatherRequest, getWeatherForcast, getPhoto, removeTrip }
+module.exports = { performAction, getWeatherRequest, getWeatherForcast, getPhoto, removeAction }
