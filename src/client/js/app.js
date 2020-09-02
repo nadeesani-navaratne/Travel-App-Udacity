@@ -47,7 +47,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-removeAction.removeAction()
+//removeAction.removeAction()
+Client.removeAction()
 
 
 //Fetch data from geonames api
